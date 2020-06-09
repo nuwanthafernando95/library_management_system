@@ -42,7 +42,7 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="updateButton" min="-2" pref="81" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="deleteButton" pref="84" max="32767" attributes="0"/>
+                                  <Component id="deleteButton" pref="94" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -54,13 +54,13 @@
                                       <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -68,21 +68,21 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="program_venue" pref="134" max="32767" attributes="0"/>
-                                      <Component id="program_id" max="32767" attributes="0"/>
-                                      <Component id="program_phone" alignment="0" pref="134" max="32767" attributes="0"/>
-                                      <Component id="program_time" alignment="0" pref="134" max="32767" attributes="0"/>
-                                      <Component id="program_date" max="32767" attributes="0"/>
-                                      <Component id="program_budget" alignment="0" pref="134" max="32767" attributes="0"/>
+                                      <Component id="author_name" pref="134" max="32767" attributes="0"/>
+                                      <Component id="book_id" max="32767" attributes="0"/>
+                                      <Component id="publisher_name" alignment="0" pref="134" max="32767" attributes="0"/>
+                                      <Component id="category" alignment="0" pref="134" max="32767" attributes="0"/>
+                                      <Component id="published_date" max="32767" attributes="0"/>
+                                      <Component id="book_current_price" alignment="0" pref="134" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane2" min="-2" pref="392" max="-2" attributes="0"/>
-                          <Component id="returnButton" pref="394" max="32767" attributes="0"/>
+                          <Component id="returnButton" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -103,24 +103,24 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <Component id="program_id" min="-2" max="-2" attributes="0"/>
+                          <Component id="book_id" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="program_venue" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="author_name" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="program_phone" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="publisher_name" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="program_time" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="category" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -129,12 +129,12 @@
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="program_date" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="published_date" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="program_budget" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="book_current_price" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jScrollPane2" min="-2" pref="381" max="-2" attributes="0"/>
@@ -178,12 +178,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ProgramId :"/>
+        <Property name="text" type="java.lang.String" value="Book ID :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Venue:"/>
+        <Property name="text" type="java.lang.String" value="Author :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -191,43 +191,43 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Program Details"/>
+        <Property name="text" type="java.lang.String" value="Book Details"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Contact:"/>
+        <Property name="text" type="java.lang.String" value="Publisher :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Time"/>
+        <Property name="text" type="java.lang.String" value="Category :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Date: "/>
+        <Property name="text" type="java.lang.String" value="Published Date :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="program_id">
+    <Component class="javax.swing.JTextField" name="book_id">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="program_idActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="book_idActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="program_venue">
+    <Component class="javax.swing.JTextField" name="author_name">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="program_venueActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="author_nameActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="program_phone">
+    <Component class="javax.swing.JTextField" name="publisher_name">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="program_phoneActionPerformed"/>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="program_phoneKeyTyped"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="publisher_nameActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="publisher_nameKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="program_time">
+    <Component class="javax.swing.JTextField" name="category">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="program_timeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="categoryActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -262,7 +262,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="program_date">
+    <Component class="com.toedter.calendar.JDateChooser" name="published_date">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -298,13 +298,13 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Budget:"/>
+        <Property name="text" type="java.lang.String" value="Current Price :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="program_budget">
+    <Component class="javax.swing.JTextField" name="book_current_price">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="program_budgetActionPerformed"/>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="program_budgetKeyTyped"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="book_current_priceActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="book_current_priceKeyTyped"/>
       </Events>
     </Component>
   </SubComponents>

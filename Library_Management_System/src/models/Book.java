@@ -15,97 +15,55 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
  * @author User
  */
-public class Program {
+
+@Getter
+@Setter
+public class Book {
    private String id;
-   private String venue;
-   private String contact;
+   private String author;
+   private String publisher;
    private String time;
    private Date date;
    private Double budget;
    
-    public Program(String id, String venue, String contact, String time, Date date, Double budget){
+    public Book(String id, String venue, String publisher, String time, Date date, Double budget){
        this.id = id;
-       this.venue = venue;
-       this.contact = contact;
+       this.author = venue;
+       this.publisher = publisher;
        this.time = time;
        this.date = date;
        this.budget = budget;
    }
    
-   public Program(String venue, String contact, String time, Date date, Double budget){
+   public Book(String venue, String publisher, String time, Date date, Double budget){
        this.id = Components.generateUUID("Program");
-       this.venue = venue;
-       this.contact = contact;
+       this.author = venue;
+       this.publisher = publisher;
        this.time = time;
        this.date = date;
        this.budget = budget;
    }
    
-    public Program(){
+    public Book(){
        this.id = Components.generateUUID("Program");
    }
     
-    public Program(String venue, String contact, Date date){
-       this.venue = venue;
-       this.contact = contact;
+    public Book(String venue, String publisher, Date date){
+       this.author = venue;
+       this.publisher = publisher;
        this.date = date;
    }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getVenue() {
-        return venue;
-    }
-
-    public void setVenue(String venue) {
-        this.venue = venue;
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Double getBudget() {
-        return budget;
-    }
-
-    public void setBudget(Double budget) {
-        this.budget = budget;
-    }
     
        public boolean validateValues(){
-       if (this.venue != null && !this.venue.equals("") && this.contact != null && !this.contact.equals("") && this.time != null && !this.time.equals("")){
+       if (this.author != null && !this.author.equals("") && this.publisher != null && !this.publisher.equals("") && this.time != null && !this.time.equals("")){
            return true;
        }
        return false;
@@ -115,7 +73,7 @@ public class Program {
        try {
         SimpleDateFormat dateFormat = new SimpleDateFormat(common.Common.DATE_FORMAT);
         String program_date = dateFormat.format(this.date);
-        DBConnect.insertDB("INSERT INTO program (id,venue,contact,time,date,budget,status) VALUES ('"+this.id+"','"+this.venue+"','"+this.contact+"','"+this.time+"','"+program_date+"','"+this.budget+"', '"+AppStrings.ACTIVE+"')");
+        DBConnect.insertDB("INSERT INTO program (id,venue,publisher,time,date,budget,status) VALUES ('"+this.id+"','"+this.author+"','"+this.publisher+"','"+this.time+"','"+program_date+"','"+this.budget+"', '"+AppStrings.ACTIVE+"')");
         
        Message.showInfoMessage(AppStrings.SUCCESS_INSERT, AppStrings.SUCCESS);
        } catch (Exception ex) {
@@ -128,7 +86,7 @@ public class Program {
        try {
            SimpleDateFormat dateFormat = new SimpleDateFormat(common.Common.DATE_FORMAT);
             String program_date = dateFormat.format(this.date);
-        DBConnect.updateDB("UPDATE program SET venue = '"+this.venue+"', contact = '"+this.contact+"', time = '"+this.time+"', date = '"+program_date+"', budget = '"+this.budget+"' WHERE id = '"+this.id+"'");
+        DBConnect.updateDB("UPDATE program SET venue = '"+this.author+"', publisher = '"+this.publisher+"', time = '"+this.time+"', date = '"+program_date+"', budget = '"+this.budget+"' WHERE id = '"+this.id+"'");
          
        Message.showInfoMessage(AppStrings.SUCCESS_UPDATE, AppStrings.SUCCESS);
        } catch (Exception ex) {
@@ -154,8 +112,8 @@ public class Program {
        
        try {
            while(resultSet.next()){
-               this.venue = resultSet.getString("venue");
-               this.contact = resultSet.getString("contact");
+               this.author = resultSet.getString("venue");
+               this.publisher = resultSet.getString("publisher");
                this.time = resultSet.getString("time");
                this.date = new SimpleDateFormat(common.Common.DATE_FORMAT).parse(resultSet.getString("date"));
                this.budget = Double.parseDouble(resultSet.getString("budget"));
@@ -167,8 +125,8 @@ public class Program {
        }
    }
     
-          public void findProgramIdFromVenueContactTime(){
-       String qry = "SELECT id from program where venue = '"+this.venue+"' and contact = '"+this.contact+"'  ORDER BY ROWID ASC LIMIT 1"; 
+          public void findProgramIdFromVenuepublisherTime(){
+       String qry = "SELECT id from program where venue = '"+this.author+"' and publisher = '"+this.publisher+"'  ORDER BY ROWID ASC LIMIT 1"; 
        ResultSet resultSet = DBConnect.selectDB(qry);
        
        try {

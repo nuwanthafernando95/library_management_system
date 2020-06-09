@@ -11,39 +11,39 @@ import db_connection.DBConnect;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import models.Program;
+import models.Book;
 import net.proteanit.sql.DbUtils;
 
 /**
  *
  * @author User
  */
-public class ProgramManagement extends javax.swing.JFrame {
-Program program = null;
+public class BookManagement extends javax.swing.JFrame {
+Book book = null;
 boolean is_row_selected = false;
     /**
      * Creates new form SponsorManagement
      */
-    public ProgramManagement() {
+    public BookManagement() {
         initComponents();
         init();
         tableload();
     }
     
     public void init(){
-        program = new Program();
-        program_id.setText(program.getId());
-        program_id.setEditable(false);
+        book = new Book();
+        book_id.setText(book.getId());
+        book_id.setEditable(false);
     }
     
     private void clearFields(){
-        program = new Program();
-        program_id.setText(program.getId());
-        program_venue.setText("");
-        program_phone.setText("");
-        program_time.setText("");
-        program_budget.setText("");
-        program_date.setDate(null);
+        book = new Book();
+        book_id.setText(book.getId());
+        author_name.setText("");
+        publisher_name.setText("");
+        category.setText("");
+        book_current_price.setText("");
+        published_date.setDate(null);
     }
     
     private void tableload(){
@@ -70,20 +70,20 @@ boolean is_row_selected = false;
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        program_id = new javax.swing.JTextField();
-        program_venue = new javax.swing.JTextField();
-        program_phone = new javax.swing.JTextField();
-        program_time = new javax.swing.JTextField();
+        book_id = new javax.swing.JTextField();
+        author_name = new javax.swing.JTextField();
+        publisher_name = new javax.swing.JTextField();
+        category = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         programtable = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
-        program_date = new com.toedter.calendar.JDateChooser();
+        published_date = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         returnButton = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        program_budget = new javax.swing.JTextField();
+        book_current_price = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/assets/icon1.png")).getImage());
@@ -109,45 +109,45 @@ boolean is_row_selected = false;
             }
         });
 
-        jLabel1.setText("ProgramId :");
+        jLabel1.setText("Book ID :");
 
-        jLabel2.setText("Venue:");
+        jLabel2.setText("Author :");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Program Details");
+        jLabel3.setText("Book Details");
 
-        jLabel4.setText("Contact:");
+        jLabel4.setText("Publisher :");
 
-        jLabel6.setText("Time");
+        jLabel6.setText("Category :");
 
-        jLabel7.setText("Date: ");
+        jLabel7.setText("Published Date :");
 
-        program_id.addActionListener(new java.awt.event.ActionListener() {
+        book_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                program_idActionPerformed(evt);
+                book_idActionPerformed(evt);
             }
         });
 
-        program_venue.addActionListener(new java.awt.event.ActionListener() {
+        author_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                program_venueActionPerformed(evt);
+                author_nameActionPerformed(evt);
             }
         });
 
-        program_phone.addActionListener(new java.awt.event.ActionListener() {
+        publisher_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                program_phoneActionPerformed(evt);
+                publisher_nameActionPerformed(evt);
             }
         });
-        program_phone.addKeyListener(new java.awt.event.KeyAdapter() {
+        publisher_name.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                program_phoneKeyTyped(evt);
+                publisher_nameKeyTyped(evt);
             }
         });
 
-        program_time.addActionListener(new java.awt.event.ActionListener() {
+        category.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                program_timeActionPerformed(evt);
+                categoryActionPerformed(evt);
             }
         });
 
@@ -192,16 +192,16 @@ boolean is_row_selected = false;
             }
         });
 
-        jLabel11.setText("Budget:");
+        jLabel11.setText("Current Price :");
 
-        program_budget.addActionListener(new java.awt.event.ActionListener() {
+        book_current_price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                program_budgetActionPerformed(evt);
+                book_current_priceActionPerformed(evt);
             }
         });
-        program_budget.addKeyListener(new java.awt.event.KeyAdapter() {
+        book_current_price.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                program_budgetKeyTyped(evt);
+                book_current_priceKeyTyped(evt);
             }
         });
 
@@ -224,7 +224,7 @@ boolean is_row_selected = false;
                                     .addGap(18, 18, 18)
                                     .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
+                                    .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
@@ -234,27 +234,27 @@ boolean is_row_selected = false;
                                         .addComponent(jLabel7)
                                         .addComponent(jLabel1)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(layout.createSequentialGroup()
                                                     .addComponent(jLabel6)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                     .addComponent(jLabel10))
                                                 .addComponent(jLabel4))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jLabel9)))
                                     .addGap(55, 55, 55)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(program_venue, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                        .addComponent(program_id)
-                                        .addComponent(program_phone, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                        .addComponent(program_time, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                        .addComponent(program_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(program_budget, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))))
+                                        .addComponent(author_name, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                                        .addComponent(book_id)
+                                        .addComponent(publisher_name, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                                        .addComponent(category, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                                        .addComponent(published_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(book_current_price, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))))
                             .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(returnButton, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE))))
+                            .addComponent(returnButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -269,32 +269,32 @@ boolean is_row_selected = false;
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(program_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(book_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(program_venue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(author_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(program_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(publisher_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(program_time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(6, 6, 6))
-                            .addComponent(program_date, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(published_date, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(program_budget, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(book_current_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -309,14 +309,14 @@ boolean is_row_selected = false;
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        program.setVenue(program_venue.getText());
-        program.setContact(program_phone.getText());
-        program.setTime(program_time.getText());
-        program.setDate(program_date.getDate());
-        program.setBudget(Double.parseDouble(program_budget.getText().equals("")?"0":program_budget.getText()));
+        book.setAuthor(author_name.getText());
+        book.setPublisher(publisher_name.getText());
+        book.setTime(category.getText());
+        book.setDate(published_date.getDate());
+        book.setBudget(Double.parseDouble(book_current_price.getText().equals("")?"0":book_current_price.getText()));
         
-        if (program.validateValues()){
-             program.insertProgram();
+        if (book.validateValues()){
+             book.insertProgram();
              clearFields();
              tableload();
         }else{
@@ -325,19 +325,19 @@ boolean is_row_selected = false;
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-        program = new Program(
-                    program_id.getText(),
-                    program_venue.getText(),
-                    program_phone.getText(),
-                    program_time.getText(),
-                    program_date.getDate(),
-                    Double.parseDouble(program_budget.getText()));
+        book = new Book(
+                    book_id.getText(),
+                    author_name.getText(),
+                    publisher_name.getText(),
+                    category.getText(),
+                    published_date.getDate(),
+                    Double.parseDouble(book_current_price.getText()));
         
-        if (program.validateValues()){
+        if (book.validateValues()){
         int user_response = Message.showUpdateMessage(AppStrings.SPONSOR);
        
         if (user_response == 0){
-                program.updateProgram();
+                book.updateProgram();
                 tableload();
         }
         }else{
@@ -350,30 +350,30 @@ boolean is_row_selected = false;
         int user_response = Message.showDeleteMessage(AppStrings.SPONSOR);
         
         if (user_response == 0){
-            program = new Program();
-            program.setId(program_id.getText());
+            book = new Book();
+            book.setId(book_id.getText());
             
-                program.deleteProgram();
+                book.deleteProgram();
                 tableload(); 
                 clearFields();
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
 
-    private void program_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_program_idActionPerformed
+    private void book_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_idActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_program_idActionPerformed
+    }//GEN-LAST:event_book_idActionPerformed
 
-    private void program_venueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_program_venueActionPerformed
+    private void author_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_author_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_program_venueActionPerformed
+    }//GEN-LAST:event_author_nameActionPerformed
 
-    private void program_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_program_phoneActionPerformed
+    private void publisher_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publisher_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_program_phoneActionPerformed
+    }//GEN-LAST:event_publisher_nameActionPerformed
 
-    private void program_timeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_program_timeActionPerformed
+    private void categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_program_timeActionPerformed
+    }//GEN-LAST:event_categoryActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         ManagemetSelection managemetSelection = new ManagemetSelection();
@@ -388,16 +388,16 @@ boolean is_row_selected = false;
         
        try{
         Date date = new SimpleDateFormat(common.Common.DATE_FORMAT).parse(programtable.getValueAt(row, 2).toString());
-        Program program = new Program(programtable.getValueAt(row, 0).toString(), programtable.getValueAt(row, 1).toString(), date);
-        program.findProgramIdFromVenueContactTime();
+        Book program = new Book(programtable.getValueAt(row, 0).toString(), programtable.getValueAt(row, 1).toString(), date);
+        program.findProgramIdFromVenuepublisherTime();
         program.findProgramDetailsFromId();
         
-        program_id.setText(program.getId());
-        program_venue.setText(program.getVenue());
-        program_phone.setText(program.getContact());
-        program_time.setText(program.getTime());
-        program_date.setDate(program.getDate());
-        program_budget.setText(Double.toString(program.getBudget()));
+        book_id.setText(program.getId());
+        author_name.setText(program.getAuthor());
+        publisher_name.setText(program.getPublisher());
+        category.setText(program.getTime());
+        published_date.setDate(program.getDate());
+        book_current_price.setText(Double.toString(program.getBudget()));
         addButton.setVisible(false);
        }catch(Exception e){
            e.printStackTrace();
@@ -411,23 +411,23 @@ boolean is_row_selected = false;
         addButton.setVisible(true);
     }//GEN-LAST:event_returnButtonActionPerformed
 
-    private void program_budgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_program_budgetActionPerformed
+    private void book_current_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_current_priceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_program_budgetActionPerformed
+    }//GEN-LAST:event_book_current_priceActionPerformed
 
-    private void program_phoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_program_phoneKeyTyped
+    private void publisher_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_publisher_nameKeyTyped
         // TODO add your handling code here:
         if(!(Character.isDigit(evt.getKeyChar()))){
                 evt.consume();
             }
-    }//GEN-LAST:event_program_phoneKeyTyped
+    }//GEN-LAST:event_publisher_nameKeyTyped
 
-    private void program_budgetKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_program_budgetKeyTyped
+    private void book_current_priceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_book_current_priceKeyTyped
         // TODO add your handling code here:
         if(!(Character.isDigit(evt.getKeyChar()))){
                 evt.consume();
             }
-    }//GEN-LAST:event_program_budgetKeyTyped
+    }//GEN-LAST:event_book_current_priceKeyTyped
 
     
   
@@ -448,27 +448,33 @@ boolean is_row_selected = false;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProgramManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProgramManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProgramManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProgramManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProgramManagement().setVisible(true);
+                new BookManagement().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
+    private javax.swing.JTextField author_name;
+    private javax.swing.JTextField book_current_price;
+    private javax.swing.JTextField book_id;
+    private javax.swing.JTextField category;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -482,13 +488,9 @@ boolean is_row_selected = false;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField program_budget;
-    private com.toedter.calendar.JDateChooser program_date;
-    private javax.swing.JTextField program_id;
-    private javax.swing.JTextField program_phone;
-    private javax.swing.JTextField program_time;
-    private javax.swing.JTextField program_venue;
     private javax.swing.JTable programtable;
+    private com.toedter.calendar.JDateChooser published_date;
+    private javax.swing.JTextField publisher_name;
     private javax.swing.JButton returnButton;
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables

@@ -28,7 +28,7 @@ public class DBConnect {
             try{
              if (connection == null){
                  Class.forName("org.sqlite.JDBC");
-                resultConn = DriverManager.getConnection("jdbc:sqlite:fund_management_system_db.db");
+                resultConn = DriverManager.getConnection("jdbc:sqlite:library_management_system_db.db");
              }
                 
                 return resultConn;

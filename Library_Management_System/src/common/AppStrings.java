@@ -34,7 +34,7 @@ public class AppStrings {
      
      //Activities
      public static String SPONSOR = "sponsor";
-     public static String PROGRAM = "program";
+     public static String PROGRAM = "book";
      public static String RECOVER_PASSWORD = "recover passwords";
      
      //Status
