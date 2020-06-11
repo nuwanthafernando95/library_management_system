@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.User;
 
 /**
  *
@@ -198,6 +199,7 @@ public class LoginPage extends javax.swing.JFrame {
         String usernameText = username.getText();
         String passwordText = password.getText();
         String dbpassword = "";
+        User user = new User();
         
         try {
         if (usernameText.equals("") || passwordText.equals("")){
@@ -216,6 +218,7 @@ public class LoginPage extends javax.swing.JFrame {
                         ResultSet passwordResultsSet = DBConnect.selectDB("SELECT * FROM authentication WHERE username = '"+usernameText+"' and password = '"+passwordText+"' and is_admin = 'true'" );
                        
                         while(passwordResultsSet.next()){
+                            user.setUsername(passwordResultsSet.getString("username"));
                             dbpassword = passwordResultsSet.getString("password");
                         }
                         
@@ -225,6 +228,7 @@ public class LoginPage extends javax.swing.JFrame {
                             Message.showError(AppStrings.INCORRECT_CREDENTAILS, AppStrings.ERROR);
                         }else{
                             //Corrct credentials
+                            StaticAttributes.currentUser = user;
                             navigateToManagementSelection();
                         }
                 }
@@ -239,6 +243,7 @@ public class LoginPage extends javax.swing.JFrame {
                         ResultSet passwordResultsSet = DBConnect.selectDB("SELECT * FROM authentication WHERE username = '"+usernameText+"' and password = '"+passwordText+"' and is_admin = 'false'" );
                        
                         while(passwordResultsSet.next()){
+                            user.setUsername(passwordResultsSet.getString("username"));
                             dbpassword = passwordResultsSet.getString("password");
                         }
                         
@@ -248,6 +253,7 @@ public class LoginPage extends javax.swing.JFrame {
                             Message.showError(AppStrings.INCORRECT_CREDENTAILS, AppStrings.ERROR);
                         }else{
                             //Corrct credentials
+                            StaticAttributes.currentUser = user;
                             navigateToManagementSelection();
                         }
                 }

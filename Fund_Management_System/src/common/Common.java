@@ -15,4 +15,5 @@ public class Common {
     public static String DATE_FORMAT = "dd/MM/yyyy";
     public static int MIN_PASS_LENGTH = 5;
     public static int MAX_PASS_LENGTH = 10;
+    public static int BOOK_RETURN_DATES = 5;
 }

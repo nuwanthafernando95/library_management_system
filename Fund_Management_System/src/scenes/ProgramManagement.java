@@ -47,7 +47,7 @@ boolean is_row_selected = false;
     }
     
     private void tableload(){
-        String qry = "SELECT venue as book_name, contact as author, date as purchased_date from program where status = 'ACTIVE'";
+        String qry = "SELECT venue as book_name, contact as author, date as purchased_date from program where status = 'ACTIVE' or status = 'PENDING'";
         ResultSet resultSet = DBConnect.selectDB(qry);
         programtable.setModel(DbUtils.resultSetToTableModel(resultSet));
     }

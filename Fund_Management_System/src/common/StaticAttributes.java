@@ -5,11 +5,13 @@
  */
 package common;
 
+import models.User;
+
 /**
  *
  * @author User
  */
 public class StaticAttributes {
     public static String CURRENT_USER_TYPE = "ADMIN";
-    
+    public static User currentUser;
 }
